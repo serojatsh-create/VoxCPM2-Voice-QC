@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "voxcpm_python": "C:\\path\\to\\VoxCPM2\\.venv\\Scripts\\python.exe",
+    "voxcpm_batch_script": "C:\\path\\to\\VoxCPM2\\batch_generate.py",
+    "voxcpm_model": "C:\\path\\to\\VoxCPM2\\model",
+    "asr_python": "C:\\path\\to\\asr\\.venv\\Scripts\\python.exe",
+    "asr_model": "C:\\path\\to\\paraformer-model",
+    "vad_model": "C:\\path\\to\\fsmn-vad-model",
+    "reference_audio": "C:\\path\\to\\reference.wav",
+    "reference_text_file": "reference_text.txt",
+    "input_text": "input.txt",
+    "output_root": "outputs",
+    "ffmpeg": "C:\\path\\to\\ffmpeg.exe",
+    "ffprobe": "C:\\path\\to\\ffprobe.exe"
+  },
+  "segmentation": {
+    "mode": "reviewed",
+    "preferred_min_chars": 120,
+    "preferred_max_chars": 180,
+    "hard_max_chars": 240
+  },
+  "generation": {
+    "cfg": 2.0,
+    "steps": 20,
+    "device": "cuda",
+    "asr_device": "cuda:0",
+    "max_parallel": 1,
+    "normalize": false,
+    "denoise": false,
+    "reference_mode": "combined",
+    "base_seed": 20235791,
+    "retry_seed_stride": 104729,
+    "max_quality_retries": 2,
+    "min_free_vram_mb": 4096
+  },
+  "quality": {
+    "internal_gap_floor_ms": 280,
+    "internal_gap_mad_multiplier": 4.0,
+    "comma_pause_min_ms": 40,
+    "comma_pause_max_ms": 900,
+    "sentence_pause_min_ms": 100,
+    "sentence_pause_max_ms": 1600,
+    "punctuation_boundary_min_ms": 240,
+    "known_asr_substitutions": {},
+    "speed_window_chars": 6,
+    "speed_ratio_limit": 1.45,
+    "speed_consecutive_windows": 2,
+    "cer_limit": 0.12,
+    "missing_or_extra_span_limit": 2,
+    "clipping_fraction_limit": 0.001,
+    "minimum_audio_seconds": 0.35,
+    "overall_speed_min_chars_per_second": 2.0,
+    "overall_speed_max_chars_per_second": 7.0,
+    "overall_speed_ratio_max": 1.5,
+    "tail_analysis_min_seconds": 4.0,
+    "tail_centroid_ratio_limit": 0.65,
+    "tail_high_frequency_ratio_limit": 0.5,
+    "tail_rms_drop_db_limit": 10.0,
+    "cross_segment_gap_min_ms": 60,
+    "cross_segment_gap_max_ms": 1200
+  }
+}
